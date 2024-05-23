@@ -94,7 +94,7 @@ These utilities have been removed from Tailwind documentation, replaced by the [
 Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so `tw-reset` includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as the ones in v4. If you were previously using this plugin, make sure you remove it when adding `tw-reset`:
 
 ```diff
-export default {
+module.exports = {
 +   presets: [require('tw-reset')],
     plugins: [
 -       require('@tailwindcss/container-queries')
