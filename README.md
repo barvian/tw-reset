@@ -41,7 +41,7 @@ module.exports = {
 
 ### Optimized universal defaults
 
-By default, Tailwind includes the following rule to reset internal custom CSS properties on each new element. You may have seen them in your inspector at some point:
+By default, Tailwind outputs the following rule to prevent internal CSS variables from inheriting. You may have seen them in your inspector at some point:
 
 ```css
 *,
@@ -59,7 +59,7 @@ By default, Tailwind includes the following rule to reset internal custom CSS pr
 
 This works, but it's inefficient as they apply to every single element on the page even though they're only needed in their corresponding utilities.
 
-An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves rendering performance of your site. It's currently used in production on [tailwindcss.com](https://tailwindcss.com). [It was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. from Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so tw-reset enables this strategy as default, which enforces best practices on top of the other improvements mentioned.
+An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves rendering performance of your site. It's currently used in production on [tailwindcss.com](https://tailwindcss.com) and [was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. from Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so tw-reset enables this strategy as default, which enforces best practices on top of the other improvements mentioned.
 
 ### `*-opacity` utilities disabled by default
 
@@ -91,19 +91,19 @@ These utilities have been removed from Tailwind documentation, replaced by the [
 
 ### Container queries included by default
 
+Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so tw-reset includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as the ones in v4. If you were previously using this plugin, make sure you remove it when adding tw-reset:
+
 ```diff
 - import containerQueries from '@tailwindcss/container-queries'
 import reset from 'tw-reset'
 
 export default {
-    presets: [reset],
++   presets: [reset],
     plugins: [
 -       containerQueries
     ]
 }
 ```
-
-Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so tw-reset includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax.
 
 ### Default screens in `rem`
 
@@ -129,7 +129,7 @@ These deprecated utilities [will be removed in Tailwind v4](https://tailwindcss.
 
 ### Default borders and rings
 
-[Tailwind v4 will change the default border and ring colors to `currentColor`](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), which is the browser default. It also uses 1px as the default ring width, and 100% as the default ring opacity. These changes have also been brought to tw-reset, which helps future-proof your site and provides more predictable behavior.
+[Tailwind v4 will change the default border and ring colors to `currentColor`](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), which is the browser default. It also uses 1px as the default ring width, and 100% as the default ring opacity. tw-reset implements all these changes, which provides more predictable behavior and will help future-proof your site for Tailwind v4.
 
 ### Relative content paths
 
