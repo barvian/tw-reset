@@ -2,6 +2,10 @@
 
 A 'reset' for your Tailwind config that enforces best practices, improves rendering performance, and reduces bundle size.
 
+## Why would I want this?
+
+Tailwind v3's default config includes a bunch of deprecated stuff that the authors wanted to change but couldn't because of backwards compatibility (i.e. deprecated `flex-shrink-` utilities, unpredictable `content` path behavior). Tailwind v4 will address all of these, but in the meantime you can modernize & future-proof your existing v3 sites with tw-reset, while reaping some performance and bundle size improvements.
+
 ---
 
 ## Installation
