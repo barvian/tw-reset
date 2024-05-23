@@ -41,7 +41,7 @@ module.exports = {
 
 ### Optimized universal defaults
 
-By default, Tailwind outputs the following rule to prevent internal CSS variables from inheriting. You may have seen them in your inspector at some point:
+By default, Tailwind outputs the following rule to prevent internal CSS variables from inheriting. You may have seen it in your inspector at some point:
 
 ```css
 *,
