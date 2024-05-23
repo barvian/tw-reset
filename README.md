@@ -21,6 +21,16 @@ module.exports = {
 }
 ```
 
+> [!IMPORTANT]
+> If you're using `<style>` tags in Vue/Svelte, or CSS modules, pass this option to the preset:
+> ```
+> presets: [
+>     require('tw-reset')({
+>         optimizeUniversalDefaults: false
+>     })
+> ]
+> ```
+> Read [the first section below](#optimized-universal-defaults) for more information.
 ---
 
 ## What it does
@@ -45,7 +55,7 @@ By default, Tailwind includes the following rule to reset internal custom CSS pr
 
 This works, but it's inefficient as they apply to every single element on the page even though they're only needed in their corresponding utilities.
 
-An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves rendering performance of your site. [It was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. from Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](<(https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css)>), so tw-reset enables this strategy as default, which enforces best practices on top of the other improvements mentioned.
+An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves rendering performance of your site. It's currently used in production on [tailwindcss.com](https://tailwindcss.com). [It was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. from Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so tw-reset enables this strategy as default, which enforces best practices on top of the other improvements mentioned.
 
 ### `*-opacity` utilities disabled by default
 
