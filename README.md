@@ -37,7 +37,7 @@ module.exports = {
 > Read [the first section below](#optimized-universal-defaults) for more information.
 ---
 
-## What it does
+## What it changes
 
 ### Optimized universal defaults
 
