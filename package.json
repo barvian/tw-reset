@@ -8,8 +8,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/barvian/tw-reset.git",
-		"directory": "plugin"
+		"url": "git+https://github.com/barvian/tw-reset.git"
 	},
 	"bugs": {
 		"url": "https://github.com/barvian/tw-reset/issues"
@@ -19,21 +18,35 @@
 		"tailwindcss",
 		"tailwind"
 	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.js",
+			"import": "./dist/index.mjs"
+		},
+		"./package.json": "./package.json",
+		"./defaultTheme": {
+			"types": "./dist/defaultTheme.d.ts",
+			"require": "./dist/defaultTheme.js",
+			"import": "./dist/defaultTheme.mjs"
+		}
+	},
 	"scripts": {
 		"test": "bun test",
-		"build": "tsup src/index.ts --format esm,cjs --no-splitting --clean && tsc -p tsconfig.build.json --emitDeclarationOnly",
-		"dev": "pnpm run build --watch",
+		"build": "tsup src/index.ts src/defaultTheme.ts --format esm,cjs --no-splitting --clean && tsc -p tsconfig.build.json --emitDeclarationOnly",
 		"prepublishOnly": "pnpm run build && pnpm run test",
 		"format": "prettier --write ."
 	},
 	"files": [
 		"dist",
+		"package.json",
 		"README.md"
 	],
 	"peerDependencies": {
 		"tailwindcss": "^3.2.0"
 	},
 	"devDependencies": {
+		"bun": "^1.0",
 		"@types/bun": "^1.0.5",
 		"@types/dlv": "^1.1.4",
 		"jest-diff": "^29.7.0",
