@@ -68,7 +68,7 @@ const makeReset = ({
 			}
 		},
 		plugins: [
-			plugin(({ addUtilities, matchUtilities, theme, config }) => {
+			plugin(({ addUtilities, matchUtilities, theme, config, corePlugins }) => {
 				// Check to see if our future or experimental objects were
 				// overridden, and warn. Only works b/c they don't get deeply merged
 				// https://tailwindcss.com/docs/presets#merging-logic-in-depth
@@ -90,41 +90,49 @@ const makeReset = ({
 				// disable disableDeprecated first
 
 				// flexShrink
-				matchUtilities(
-					{
-						shrink: (val) => ({
-							'flex-shrink': val
-						})
-					},
-					{
-						values: theme('flexShrink')
-					}
-				)
+				if (!corePlugins('flexShrink'))
+					matchUtilities(
+						{
+							shrink: (val) => ({
+								'flex-shrink': val
+							})
+						},
+						{
+							values: theme('flexShrink')
+						}
+					)
 
 				// flexGrow
-				matchUtilities(
-					{
-						grow: (val) => ({
-							'flex-grow': val
-						})
-					},
-					{
-						values: theme('flexGrow')
-					}
-				)
+				if (!corePlugins('flexGrow'))
+					matchUtilities(
+						{
+							grow: (val) => ({
+								'flex-grow': val
+							})
+						},
+						{
+							values: theme('flexGrow')
+						}
+					)
 
 				// boxDecorationBreak
-				addUtilities({
-					'.box-decoration-slice': { 'box-decoration-break': 'slice' },
-					'.box-decoration-clone': { 'box-decoration-break': 'clone' }
-				})
+				if (!corePlugins('boxDecorationBreak'))
+					addUtilities({
+						'.box-decoration-slice': { 'box-decoration-break': 'slice' },
+						'.box-decoration-clone': { 'box-decoration-break': 'clone' }
+					})
 
 				// textOverflow
-				addUtilities({
-					'.truncate': { overflow: 'hidden', 'text-overflow': 'ellipsis', 'white-space': 'nowrap' },
-					'.text-ellipsis': { 'text-overflow': 'ellipsis' },
-					'.text-clip': { 'text-overflow': 'clip' }
-				})
+				if (!corePlugins('textOverflow'))
+					addUtilities({
+						'.truncate': {
+							overflow: 'hidden',
+							'text-overflow': 'ellipsis',
+							'white-space': 'nowrap'
+						},
+						'.text-ellipsis': { 'text-overflow': 'ellipsis' },
+						'.text-clip': { 'text-overflow': 'clip' }
+					})
 			}),
 			// https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web
 			containerQueries
