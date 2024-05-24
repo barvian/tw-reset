@@ -30,9 +30,9 @@ module.exports = {
 >
 > ```
 > presets: [
->     require('tw-reset')({
->         optimizeUniversalDefaults: false
->     })
+>   require('tw-reset')({
+>     optimizeUniversalDefaults: false
+>   })
 > ]
 > ```
 >
@@ -50,13 +50,13 @@ By default, Tailwind outputs the following rule to prevent internal CSS variable
 *,
 ::before,
 ::after {
-	--tw-border-spacing-x: 0;
-	--tw-border-spacing-y: 0;
-	--tw-translate-x: 0;
-	--tw-translate-y: 0;
-	--tw-rotate: 0;
-	--tw-skew-x: 0;
-	/* ... */
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  /* ... */
 }
 ```
 
@@ -67,11 +67,11 @@ An alternative strategy is available behind an experimental config flag, which o
 ```js
 // tailwind.config.js
 module.exports = {
-	presets: [
-		require('tw-reset')({
-			optimizeUniversalDefaults: false
-		})
-	]
+  presets: [
+    require('tw-reset')({
+      optimizeUniversalDefaults: false
+    })
+  ]
 }
 ```
 
@@ -109,10 +109,10 @@ Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.
 
 ```diff
 module.exports = {
-+   presets: [require('tw-reset')],
-    plugins: [
--       require('@tailwindcss/container-queries')
-    ]
++  presets: [require('tw-reset')],
+   plugins: [
+-    require('@tailwindcss/container-queries')
+   ]
 }
 ```
 

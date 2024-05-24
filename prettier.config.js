@@ -5,5 +5,14 @@ module.exports = {
 	semi: false,
 	trailingComma: 'none',
 	printWidth: 100,
-	plugins: ['prettier-plugin-tailwindcss']
+	plugins: ['prettier-plugin-tailwindcss'],
+	overrides: [
+		{
+			files: ['README.md'],
+			options: {
+				useTabs: false,
+				tabWidth: 2
+			}
+		}
+	]
 }
