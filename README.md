@@ -126,7 +126,7 @@ If you need to refer to these new breakpoints in your code for some reason, you 
 const { screens } = require('tw-reset/defaultTheme')
 ```
 
-### Removes deprecated utilities
+### Removed deprecated utilities
 
 Tailwind currently ships with a few deprecated utilities that still show up in IntelliSense suggestions:
 
