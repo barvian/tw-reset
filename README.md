@@ -63,7 +63,7 @@ An alternative strategy is available behind an experimental config flag, which o
 
 ```js
 // tailwind.config.js
-module.export s= {
+module.exports = {
     presets: [
         require('tw-reset')({
             optimizeUniversalDefaults: false
