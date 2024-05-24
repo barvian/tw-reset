@@ -128,7 +128,7 @@ const { screens } = require('tw-reset/defaultTheme')
 
 ### Removed deprecated utilities
 
-Tailwind currently ships with a few deprecated utilities that still show up in IntelliSense suggestions:
+Tailwind currently ships with [a few deprecated utilities](https://github.com/tailwindlabs/tailwindcss/blob/f1f419a9ecfcd00a2001ee96ab252739fca47564/src/corePlugins.js) that still show up in IntelliSense suggestions:
 
 - `flex-shrink` (replaced by `shrink`)
 - `flex-grow` (replaced by `grow`)
