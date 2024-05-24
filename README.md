@@ -80,7 +80,7 @@ Older versions of Tailwind used `*-opacity` classes to change the opacity of col
 <h1 class="text-black text-opacity-50">...</h1>
 ```
 
-These utilities have been removed from Tailwind documentation, replaced by the [newer opacity modifier syntax](https://tailwindcss.com/docs/upgrade-guide#new-opacity-modifier-syntax). They'll be disabled by default in Tailwind v4, so `tw-reset` also disables them by default. This has the pleasant side effect of slightly reducing your CSS bundle size and simplifying your color output:
+These utilities have been removed from Tailwind documentation, replaced by the [newer opacity modifier syntax](https://tailwindcss.com/docs/upgrade-guide#new-opacity-modifier-syntax). They'll be disabled by default in Tailwind v4, so `tw-reset` also disables them by default. This has the pleasant side effect of slightly reducing your CSS bundle size and simplifying the color output:
 
 ```diff
 .border-white {
