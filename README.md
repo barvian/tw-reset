@@ -59,7 +59,7 @@ By default, Tailwind outputs the following rule to prevent internal CSS variable
 
 This works, but it's inefficient as it applies to every element on the page even though the variables are only needed in their corresponding utilities.
 
-An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves rendering performance of your site. It's currently used in production on [tailwindcss.com](https://tailwindcss.com) and [was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. from Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so `tw-reset` enables this strategy as default, which enforces best practices on top of the other improvements mentioned.  If you must use per-component styles, you can disable this optimization with:
+An alternative strategy is available behind an experimental config flag, which optimizes this output and likely improves the rendering performance of your site. It's currently used in production on [tailwindcss.com](https://tailwindcss.com) and [was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. Vue/Svelte `<style>` tags or CSS modules). However, [these setups are discouraged by Tailwind](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so `tw-reset` enables this strategy as default, which enforces best practices on top of the other improvements mentioned.  If you must use per-component styles, you can disable this optimization with:
 
 ```js
 // tailwind.config.js
@@ -80,7 +80,7 @@ Older versions of Tailwind used `*-opacity` classes to change the opacity of col
 <h1 class="text-black text-opacity-50">...</h1>
 ```
 
-These utilities have been removed from Tailwind documentation, replaced by the [newer opacity modifier syntax](https://tailwindcss.com/docs/upgrade-guide#new-opacity-modifier-syntax). They'll be disabled by default in Tailwind v4, so `tw-reset` also disables them by default. This has a pleasant side effect of slightly reducing your CSS bundle size and simplifying your color output:
+These utilities have been removed from Tailwind documentation, replaced by the [newer opacity modifier syntax](https://tailwindcss.com/docs/upgrade-guide#new-opacity-modifier-syntax). They'll be disabled by default in Tailwind v4, so `tw-reset` also disables them by default. This has the pleasant side effect of slightly reducing your CSS bundle size and simplifying your color output:
 
 ```diff
 .border-white {
@@ -102,7 +102,7 @@ These utilities have been removed from Tailwind documentation, replaced by the [
 
 ### Container queries included by default
 
-Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so `tw-reset` includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as the ones in v4. If you were previously using this plugin, make sure you remove it when adding `tw-reset`:
+Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so `tw-reset` includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as Tailwind v4. If you were previously using this plugin, make sure you remove it when adding `tw-reset`:
 
 ```diff
 module.exports = {
@@ -145,4 +145,4 @@ From [Tailwind's documentation](https://tailwindcss.com/docs/content-configurati
 
 > By default Tailwind resolves non-absolute content paths relative to the current working directory, not the tailwind.config.js file. This can lead to unexpected results if you run Tailwind from a different directory.
 
-`tw-reset` "corrects" this unexpected behavior, which ["will likely become the default" in Tailwind v4](https://tailwindcss.com/docs/content-configuration#using-relative-paths).
+`tw-reset` resolves non-absolute content paths relative to the config file, which ["will likely become the default" in Tailwind v4](https://tailwindcss.com/docs/content-configuration#using-relative-paths).
