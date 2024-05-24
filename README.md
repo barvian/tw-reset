@@ -16,7 +16,7 @@ Install the plugin from npm:
 npm install -D tw-reset
 ```
 
-Then add the preset to your tailwind.config.js file:
+Then add the preset to your `tailwind.config.js` file:
 
 ```diff
 module.exports = {
