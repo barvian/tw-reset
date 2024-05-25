@@ -162,8 +162,4 @@ const { screens } = require('tw-reset/defaultTheme')
 
 ### Relative content paths
 
-From [Tailwind's documentation](https://tailwindcss.com/docs/content-configuration#using-relative-paths):
-
-> By default Tailwind resolves non-absolute content paths relative to the current working directory, not the tailwind.config.js file. This can lead to unexpected results if you run Tailwind from a different directory.
-
-`tw-reset` resolves non-absolute content paths relative to the config file, which ["will likely become the default" in Tailwind v4](https://tailwindcss.com/docs/content-configuration#using-relative-paths).
+`tw-reset` resolves non-absolute content paths relative to the config file (rather than the current working directory), which ["will likely become the default" in Tailwind v4](https://tailwindcss.com/docs/content-configuration#using-relative-paths).
