@@ -4,7 +4,7 @@ A 'reset' for your Tailwind config that enforces best practices, improves render
 
 **🤔 Why would I want this?**
 
-Tailwind v3's default config includes a bunch of stuff that the authors wanted to change but couldn't because of backwards compatibility (i.e. [deprecated `flex-shrink` utilities](#removes-deprecated-utilities), [unpredictable `content` path behavior](#removes-deprecated-utilities)). Tailwind v4 will address all of these, but in the meantime you can modernize & future-proof your existing v3 sites with `tw-reset`, while reaping some performance benefits and bundle size reductions.
+Tailwind v3's default config includes a bunch of stuff that the authors wanted to change but couldn't because of backwards compatibility (i.e. [deprecated `flex-shrink` utilities](#removes-deprecated-utilities), [unexpected `content` path behavior](#removes-deprecated-utilities)). Tailwind v4 will address all of these, but in the meantime you can modernize & future-proof your existing v3 sites with `tw-reset`, while reaping some performance benefits and bundle size reductions.
 
 ---
 
