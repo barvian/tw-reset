@@ -26,7 +26,7 @@ module.exports = {
 ```
 
 > [!IMPORTANT]
-> If you're using `<style>` tags in Vue/Svelte, or CSS modules, pass this option to the preset:
+> If you're using CSS Modules or `<style>` tags in Vue/Svelte, pass this option to the preset:
 >
 > ```
 > presets: [
