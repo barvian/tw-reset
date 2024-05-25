@@ -66,7 +66,7 @@ An alternative strategy is available behind an experimental config flag, which o
 
 https://github.com/barvian/tw-reset/assets/868352/39ca9c8c-6ac8-40d3-b97a-3be069a78541
 
-It's currently used in production on [tailwindcss.com](https://tailwindcss.com) and [was initially considered for the default strategy in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. Vue/Svelte `<style>` tags or CSS modules). However, [Tailwind discourages these setups](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so `tw-reset` enables this strategy as default, which enforces best practices and brings the other improvements mentioned. If you must use per-component styles, though, you can disable this optimization with:
+This flag is currently used in production on [tailwindcss.com](https://tailwindcss.com) and [was initially considered for the default config in Tailwind v3](https://github.com/tailwindlabs/tailwindcss/discussions/7317#discussioncomment-2107898), but was ruled out because it doesn't work with "per-component styles" that cause PostCSS to run multiple times in isolation (i.e. Vue/Svelte `<style>` tags or CSS modules). However, [Tailwind discourages per-component styles](https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css), so `tw-reset` enables this flag by default, which enforces best practices and brings the other improvements mentioned. If you must use per-component styles, you can opt-out with:
 
 ```js
 // tailwind.config.js
