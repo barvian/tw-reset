@@ -99,6 +99,8 @@ These deprecated utilities [will be removed in Tailwind v4](https://tailwindcss.
 
 [Tailwind v4 will change the default border and ring colors to `currentColor`](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), which is the browser default. It will also use `1px` as the default ring width, and `100%` as the default ring opacity. `tw-reset` implements all these changes, which future-proofs your site for Tailwind v4 and provides more predictable behavior.
 
+---
+
 ### `*-opacity` utilities disabled by default
 
 Older versions of Tailwind used `*-opacity` classes to change the opacity of colors, i.e.
