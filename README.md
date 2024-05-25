@@ -81,6 +81,24 @@ module.exports = {
 
 ---
 
+### Removed deprecated utilities
+
+Tailwind currently ships with [a few deprecated utilities](https://github.com/tailwindlabs/tailwindcss/blob/f1f419a9ecfcd00a2001ee96ab252739fca47564/src/corePlugins.js) that still show up in IntelliSense suggestions:
+
+- `flex-shrink` (replaced by `shrink`)
+- `flex-grow` (replaced by `grow`)
+- `overflow-ellipsis` (replaced by `text-ellipsis`)
+- `decoration-slice` (replaced by `box-decoration-slice`)
+- `decoration-clone` (replaced by `box-decoration-clone`)
+
+These deprecated utilities [will be removed in Tailwind v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), so they're disabled by default in `tw-reset` and hidden from IntelliSense.
+
+---
+
+### Default borders and rings
+
+[Tailwind v4 will change the default border and ring colors to `currentColor`](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), which is the browser default. It will also use `1px` as the default ring width, and `100%` as the default ring opacity. `tw-reset` implements all these changes, which future-proofs your site for Tailwind v4 and provides more predictable behavior.
+
 ### `*-opacity` utilities disabled by default
 
 Older versions of Tailwind used `*-opacity` classes to change the opacity of colors, i.e.
@@ -111,21 +129,6 @@ These utilities have been removed from Tailwind documentation, replaced by the [
 
 ---
 
-### Container queries included by default
-
-Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so `tw-reset` includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as Tailwind v4. If you were previously using this plugin, make sure you remove it when adding `tw-reset`:
-
-```diff
-module.exports = {
-+  presets: [require('tw-reset')],
-   plugins: [
--    require('@tailwindcss/container-queries')
-   ]
-}
-```
-
----
-
 ### Default screens in `rem`
 
 [Tailwind v4 will use `rem` units for its default breakpoints](https://github.com/tailwindlabs/tailwindcss/pull/13469), which better complement the default font sizes and spacing scales that also use `rem`. This was initially considered for Tailwind v1, but [was ruled out due to Safari bugs at the time](https://github.com/tailwindlabs/tailwindcss/discussions/8378#discussioncomment-2779675). Those bugs have since been fixed, so `tw-reset` provides `rem`-based breakpoints as default. This shouldn't cause any changes to your design if you're using Tailwind's default `px`-based breakpoints.
@@ -138,23 +141,18 @@ const { screens } = require('tw-reset/defaultTheme')
 
 ---
 
-### Removed deprecated utilities
+### Container queries included by default
 
-Tailwind currently ships with [a few deprecated utilities](https://github.com/tailwindlabs/tailwindcss/blob/f1f419a9ecfcd00a2001ee96ab252739fca47564/src/corePlugins.js) that still show up in IntelliSense suggestions:
+Tailwind v4 [will support container queries out-of-the-box](https://tailwindcss.com/blog/tailwindcss-v4-alpha#designed-for-the-modern-web), so `tw-reset` includes the [official container query plugin](https://github.com/tailwindlabs/tailwindcss-container-queries) that uses the same syntax as Tailwind v4. If you were previously using this plugin, make sure you remove it when adding `tw-reset`:
 
-- `flex-shrink` (replaced by `shrink`)
-- `flex-grow` (replaced by `grow`)
-- `overflow-ellipsis` (replaced by `text-ellipsis`)
-- `decoration-slice` (replaced by `box-decoration-slice`)
-- `decoration-clone` (replaced by `box-decoration-clone`)
-
-These deprecated utilities [will be removed in Tailwind v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), so they're disabled by default in `tw-reset` and hidden from IntelliSense.
-
----
-
-### Default borders and rings
-
-[Tailwind v4 will change the default border and ring colors to `currentColor`](https://tailwindcss.com/blog/tailwindcss-v4-alpha#whats-changed), which is the browser default. It will also use `1px` as the default ring width, and `100%` as the default ring opacity. `tw-reset` implements all these changes, which future-proofs your site for Tailwind v4 and provides more predictable behavior.
+```diff
+module.exports = {
++  presets: [require('tw-reset')],
+   plugins: [
+-    require('@tailwindcss/container-queries')
+   ]
+}
+```
 
 ---
 
