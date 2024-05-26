@@ -1,6 +1,6 @@
 # tw-reset
 
-A 'reset' for your Tailwind config that enforces best practices, improves rendering performance, and reduces bundle size.
+A "reset" for your Tailwind config that enforces best practices, improves rendering performance, and reduces bundle size.
 
 **🤔 Why would I want this?**
 
