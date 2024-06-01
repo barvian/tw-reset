@@ -8,7 +8,8 @@ import type {
 } from 'tailwindcss/types/config.js'
 import plugin from 'tailwindcss/plugin.js'
 import { screens } from './defaultTheme.js'
-import { bold, yellow } from 'picocolors'
+import picocolors from 'picocolors'
+const { bold, yellow } = picocolors
 
 type Keys =
 	| 'disableDeprecated'
