@@ -1,7 +1,7 @@
 import { expect, it, spyOn } from 'bun:test'
 import './matchers'
-import { html, css, run } from './run'
-import reset from '../src'
+import { html, css, run } from './run.js'
+import reset from '../dist/index.js'
 import { bold, yellow } from 'picocolors'
 
 const warn = spyOn(console, 'warn')

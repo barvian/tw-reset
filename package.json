@@ -1,10 +1,8 @@
 {
 	"name": "tw-reset",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "Maxwell Barvian",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
+	"type": "module",
 	"license": "MIT",
 	"repository": {
 		"type": "git",

@@ -5,9 +5,9 @@ import type {
 	FutureConfig,
 	FutureConfigValues,
 	PresetsConfig
-} from 'tailwindcss/types/config'
-import plugin from 'tailwindcss/plugin'
-import { screens } from './defaultTheme'
+} from 'tailwindcss/types/config.js'
+import plugin from 'tailwindcss/plugin.js'
+import { screens } from './defaultTheme.js'
 import { bold, yellow } from 'picocolors'
 
 type Keys =

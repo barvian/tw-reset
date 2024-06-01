@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from 'tailwindcss/defaultTheme.js'
 import mapObj from 'map-obj'
 
 // Ripped from Tailwind:
