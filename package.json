@@ -1,6 +1,6 @@
 {
 	"name": "tw-reset",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"author": "Maxwell Barvian",
 	"type": "module",
 	"license": "MIT",
@@ -19,14 +19,14 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs"
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js"
 		},
 		"./package.json": "./package.json",
 		"./defaultTheme": {
 			"types": "./dist/defaultTheme.d.ts",
-			"require": "./dist/defaultTheme.js",
-			"import": "./dist/defaultTheme.mjs"
+			"require": "./dist/defaultTheme.cjs",
+			"import": "./dist/defaultTheme.js"
 		}
 	},
 	"scripts": {
